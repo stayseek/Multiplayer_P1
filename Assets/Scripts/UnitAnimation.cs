@@ -13,12 +13,15 @@ public class UnitAnimation : MonoBehaviour {
     }
 
     //Placeholder functions for Animation events
-    void Hit() {
+    void Hit() 
+    {
     }
 
-    void FootR() {
+    void FootR() 
+    {
     }
 
-    void FootL() {
+    void FootL() 
+    {
     }
 }
