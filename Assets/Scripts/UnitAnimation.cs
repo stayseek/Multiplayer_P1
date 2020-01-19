@@ -3,13 +3,13 @@ using UnityEngine.AI;
 
 public class UnitAnimation : MonoBehaviour {
 
-    [SerializeField] Animator animator;
-    [SerializeField] NavMeshAgent agent;
-    private static readonly int Moving = Animator.StringToHash("Moving");
+    [SerializeField] protected Animator _animator;
+    [SerializeField] protected NavMeshAgent _agent;
+    private static readonly int Moving = Animator.StringToHash("Move");
 
     void FixedUpdate ()
     {
-        animator.SetBool(Moving, agent.hasPath);
+        _animator.SetBool(Moving, _agent.hasPath);
     }
 
     //Placeholder functions for Animation events

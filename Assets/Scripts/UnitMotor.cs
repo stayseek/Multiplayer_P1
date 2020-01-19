@@ -5,15 +5,15 @@ using UnityEngine.AI;
 public class UnitMotor : MonoBehaviour 
 {
 
-    NavMeshAgent agent;
+    private NavMeshAgent _agent;
 
     void Start () 
     {
-        agent = GetComponent<NavMeshAgent>();
+        _agent = GetComponent<NavMeshAgent>();
 	}
 	
 	public void MoveToPoint(Vector3 point) 
     {
-        agent.SetDestination(point);
+        _agent.SetDestination(point);
     }
 }
