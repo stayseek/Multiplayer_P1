@@ -1,42 +1,53 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-[RequireComponent(typeof(UnitMotor))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
 
     [SerializeField] LayerMask movementMask;
 
+    Character character;
     Camera cam;
-    UnitMotor motor;
 
-    void Start () 
+    private void Awake() 
     {
         cam = Camera.main;
-        motor = GetComponent<UnitMotor>();
-        cam.GetComponent<CameraController>().target = transform;
     }
-	
-	void Update () 
+
+    public void SetCharacter(Character character, bool isLocalPlayer) 
     {
-        if (Input.GetMouseButton(1)) 
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        this.character = character;
+        if (isLocalPlayer) cam.GetComponent<CameraController>().target = character.transform;
+    }
 
-            if (Physics.Raycast(ray, out hit, 100f, movementMask)) 
+    private void Update() 
+    {
+        if (isLocalPlayer) 
+        {
+            if (character != null) 
             {
-                motor.MoveToPoint(hit.point);
+                // при нажатии на правую кнопку мыши пересещаемся в указанную точку
+                if (Input.GetMouseButton(1)) 
+                {
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, 100f, movementMask)) 
+                    {
+                        CmdSetMovePoint(hit.point);
+                    }
+                }
             }
         }
+    }
 
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+    [Command]
+    public void CmdSetMovePoint(Vector3 point) 
+    {
+        character.SetMovePoint(point);
+    }
 
-            if (Physics.Raycast(ray, out hit, 100f)) 
-            {
-
-            }
-        }
+    private void OnDestroy() 
+    {
+        if (character != null) Destroy(character.gameObject);
     }
 }

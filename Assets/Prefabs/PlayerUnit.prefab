@@ -1918,7 +1918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4258127683416507944}
   - component: {fileID: 4258127683425667772}
-  - component: {fileID: 4258127683416480267}
+  - component: {fileID: 8409882646515517479}
   m_Layer: 0
   m_Name: Swordsman Warrior
   m_TagString: Untagged
@@ -1961,7 +1961,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4258127683416480267
+--- !u!114 &8409882646515517479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1973,8 +1973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa305aef787c0c649b44c830261c4ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4258127683425667772}
-  agent: {fileID: 8948975879366018847}
+  _animator: {fileID: 4258127683425667772}
+  _agent: {fileID: 8948975879366018847}
 --- !u!1 &8948975879366018842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +1994,7 @@ GameObject:
   - component: {fileID: 3575549396394454165}
   - component: {fileID: 8542269402967629195}
   - component: {fileID: 114100114540559552}
+  - component: {fileID: 6450034181815014414}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: Untagged
@@ -2082,7 +2083,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.12, z: 0}
 --- !u!114 &1682541130127772796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,7 +2116,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &1379231264577990251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,7 +2192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _disableBehaviours:
   - {fileID: 8948975879366018845}
-  - {fileID: 4258127683416480267}
+  - {fileID: 8409882646515517479}
 --- !u!114 &114100114540559552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2206,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  damage:
+    _baseValue: 5
+--- !u!114 &6450034181815014414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948975879366018842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc22e50b60904f408759c9afc8557c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _motor: {fileID: 8948975879366018844}
+  _myStats: {fileID: 114100114540559552}
+  _reviveDelay: 5
+  gfx: {fileID: 8948975879563968785}
 --- !u!1 &8948975879563968785
 GameObject:
   m_ObjectHideFlags: 0
