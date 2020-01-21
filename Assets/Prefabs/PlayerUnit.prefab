@@ -1985,7 +1985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8948975879366018846}
   - component: {fileID: 8948975879366018847}
-  - component: {fileID: 8948975879366018845}
   - component: {fileID: 8948975879366018844}
   - component: {fileID: 1448263999954723916}
   - component: {fileID: 1682541130127772796}
@@ -2013,7 +2012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948975879366018842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.31, y: 1.2132667, z: -31.63}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8948975879563968784}
@@ -2042,21 +2041,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8948975879366018845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8948975879366018842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 392af131e1c825945a9ba113c0cc0e6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementMask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &8948975879366018844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,13 +2064,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.48
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.12, z: 0}
+  m_Center: {x: 0, y: 1.24, z: 0}
 --- !u!114 &1682541130127772796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,7 +2178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disableBehaviours:
-  - {fileID: 8948975879366018845}
+  - {fileID: 6450034181815014414}
   - {fileID: 8409882646515517479}
 --- !u!114 &114100114540559552
 MonoBehaviour:
