@@ -27,8 +27,14 @@ public class Unit : Interactable
         {
             if (!_isDead)
             {
-                if (_myStats.CurHealth == 0) Die();
-                else OnAliveUpdate();
+                if (_myStats.CurHealth == 0)
+                {
+                    Die();
+                }
+                else
+                {
+                    OnAliveUpdate();
+                }
             }
             else
             {

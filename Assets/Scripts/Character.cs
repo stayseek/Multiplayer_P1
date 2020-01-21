@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotor), typeof(PlayerStats))]
 public class Character : Unit
 {
-    protected Vector3 _startPosition;
-    [SerializeField] protected float _reviveDelay = 5f;
-    protected float _reviveTime;
+    private Vector3 _startPosition;
+    [SerializeField] private float _reviveDelay = 5f;
+    private float _reviveTime;
 
-    [SerializeField] protected GameObject gfx;
+    [SerializeField] private GameObject gfx;
 
     void Start()
     {
@@ -60,8 +60,8 @@ public class Character : Unit
     }
     protected override void Revive()
     {
-        transform.position = _startPosition;
         base.Revive();
+        transform.position = _startPosition;
         gfx.SetActive(true);
         if (isServer)
         {
