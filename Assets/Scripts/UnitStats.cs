@@ -23,4 +23,12 @@ public class UnitStats : NetworkBehaviour
     {
         _curHealth = rate == 0 ? 0 : (int)(_maxHealth / rate);
     }
+    public virtual void TakeDamage(int damage)
+    {
+        _curHealth -= damage;
+        if (_curHealth <= 0)
+        {
+            _curHealth = 0;
+        }
+    }
 }

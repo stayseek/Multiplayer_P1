@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(UnitMotor), typeof(PlayerStats))]
 public class Character : Unit
 {
     protected Vector3 _startPosition;
@@ -20,7 +21,38 @@ public class Character : Unit
     {
         OnUpdate();
     }
-
+    protected override void OnAliveUpdate()
+    {
+        base.OnAliveUpdate();
+        if (_focus != null)
+        {
+            if (!_focus.HasInteract)
+            {
+                RemoveFocus();
+            }
+            else
+            {
+                float distance = Vector3.Distance(_focus.InteractionTransform.position, transform.position);
+                if (distance <= _focus.Radius)
+                {
+                    _focus.Interact(gameObject);
+                }
+            }
+        }
+    }
+    protected override void OnDeadUpdate()
+    {
+        base.OnDeadUpdate();
+        if (_reviveTime > 0)
+        {
+            _reviveTime -= Time.deltaTime;
+        }
+        else
+        {
+            _reviveTime = _reviveDelay;
+            Revive();
+        }
+    }
     protected override void Die()
     {
         base.Die();
@@ -28,8 +60,8 @@ public class Character : Unit
     }
     protected override void Revive()
     {
-        base.Revive();
         transform.position = _startPosition;
+        base.Revive();
         gfx.SetActive(true);
         if (isServer)
         {
@@ -42,6 +74,13 @@ public class Character : Unit
         if (!_isDead)
         {
             _motor.MoveToPoint(point);
+        }
+    }
+    public void SetNewFocus(Interactable newFocus)
+    {
+        if (!_isDead)
+        {
+            if (newFocus.HasInteract) SetFocus(newFocus);
         }
     }
 }

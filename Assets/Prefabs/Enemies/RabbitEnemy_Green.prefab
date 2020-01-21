@@ -890,6 +890,9 @@ GameObject:
   - component: {fileID: 4558520893623556443}
   - component: {fileID: 4558520893623556442}
   - component: {fileID: 1853410633676089837}
+  - component: {fileID: 7407136274758288438}
+  - component: {fileID: 3374684977961513703}
+  - component: {fileID: 3012874476245490073}
   m_Layer: 0
   m_Name: RabbitEnemy_Green
   m_TagString: Untagged
@@ -1085,12 +1088,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4874e6f6ae81a584aa09d370fd9bb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionTransform: {fileID: 4558520893623556451}
+  Radius: 2
   _motor: {fileID: 4558520893623556440}
   _myStats: {fileID: 4558520893623556443}
   _moveRadius: 10
   _minMoveDelay: 4
   _maxMoveDelay: 12
-  _aggressive: 0
+  _aggressive: 1
   _viewDistance: 5
   _reviveDelay: 5
 --- !u!114 &1853410633676089837
@@ -1107,3 +1112,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _disableBehaviours:
   - {fileID: 8993451305107722736}
+--- !u!65 &7407136274758288438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558520893623556450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.48, z: 1}
+  m_Center: {x: 0, y: 1.24, z: 0}
+--- !u!114 &3374684977961513703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558520893623556450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2744683b7c4e1458e5d915c60ad99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackSpeed: 1
+--- !u!114 &3012874476245490073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558520893623556450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664de5d42a82b74458eb14cea91ad481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2834707137244119204}
+  _unit: {fileID: 4558520893623556442}
+  _combat: {fileID: 3374684977961513703}
