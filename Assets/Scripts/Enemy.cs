@@ -45,7 +45,24 @@ public class Enemy : Unit
     protected override void OnAliveUpdate()
     {
         base.OnAliveUpdate();
-        Wandering(Time.deltaTime);
+        if (_focus == null)
+        {
+            Wandering(Time.deltaTime);
+            if (_aggressive) FindEnemy();
+        }
+        else
+        {
+            float distance = Vector3.Distance(_focus.InteractionTransform.position,
+            transform.position);
+            if (distance > _viewDistance || !_focus.HasInteract)
+            {
+                RemoveFocus();
+            }
+            else if (distance <= _focus.Radius)
+            {
+                _focus.Interact(gameObject);
+            }
+        }
     }
     void Wandering(float deltaTime)
     {
@@ -64,12 +81,40 @@ public class Enemy : Unit
     }
     protected override void Revive()
     {
-        base.Revive();
         transform.position = _startPosition;
+        base.Revive();
         if (isServer)
         {
             _motor.MoveToPoint(_startPosition);
         }
+    }
+    void FindEnemy()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position,_viewDistance, 1 << LayerMask.NameToLayer("Player"));
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Interactable interactable = colliders[i].GetComponent<Interactable>();
+            if (interactable != null && interactable.HasInteract)
+            {
+                SetFocus(interactable);
+                break;
+            }
+        }
+    }
+    public override bool Interact(GameObject user)
+    {
+        if (base.Interact(user))
+        {
+            SetFocus(user.GetComponent<Interactable>());
+            return true;
+        }
+        return false;
+    }
+    protected override void OnDrawGizmosSelected()
+    {
+        base.OnDrawGizmosSelected();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _viewDistance);
     }
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -403,6 +403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy_Violet
       objectReference: {fileID: 0}
+    - target: {fileID: 3263726066048761867, guid: 1f0d52e8b13a41b43b516438e190edd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f0d52e8b13a41b43b516438e190edd8, type: 3}
 --- !u!4 &66254056 stripped
@@ -753,6 +758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Red (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840834987243429077, guid: 01e76e2aedb21164a986b526be891dc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e76e2aedb21164a986b526be891dc1, type: 3}
@@ -2036,6 +2046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostEnemy_Violet
       objectReference: {fileID: 0}
+    - target: {fileID: 2154792064114387536, guid: d90d1bc9ee829744da3c980cda325d5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2154792064114387537, guid: d90d1bc9ee829744da3c980cda325d5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2116,6 +2131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558520893623556450, guid: 0fbce281881ab954f86651c22448a1da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4558520893623556451, guid: 0fbce281881ab954f86651c22448a1da,
         type: 3}
@@ -3084,6 +3104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BatEnemy_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151062005190111183, guid: 5d9a1e7d6f7d1fe43be16dd421f52434,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a1e7d6f7d1fe43be16dd421f52434, type: 3}
@@ -4098,6 +4123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy_Green
       objectReference: {fileID: 0}
+    - target: {fileID: 4323798485462757003, guid: ee8f6d9241277c1439038a6d236b7076,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8f6d9241277c1439038a6d236b7076, type: 3}
 --- !u!4 &781933710 stripped
@@ -4333,6 +4363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RabbitEnemy_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 2620943248151566640, guid: a6fbe4916c274ec4591699c0ac8c0306,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2620943248151566641, guid: a6fbe4916c274ec4591699c0ac8c0306,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4555,7 +4590,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4753,6 +4788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RabbitEnemy_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 2840834987243429077, guid: 01e76e2aedb21164a986b526be891dc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e76e2aedb21164a986b526be891dc1, type: 3}
 --- !u!4 &845087291 stripped
@@ -4908,6 +4948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BatEnemy_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252394320699385999, guid: 8b2106b5aab5f2045889f66745becea9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2106b5aab5f2045889f66745becea9, type: 3}
@@ -5066,6 +5111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Cyan (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519695574242529014, guid: 084a7738bd4815349b7c16aec9743358,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3519695574242529015, guid: 084a7738bd4815349b7c16aec9743358,
         type: 3}
@@ -5229,6 +5279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RabbitEnemy_Cyan
       objectReference: {fileID: 0}
+    - target: {fileID: 3519695574242529014, guid: 084a7738bd4815349b7c16aec9743358,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3519695574242529015, guid: 084a7738bd4815349b7c16aec9743358,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5386,6 +5441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Cyan (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519695574242529014, guid: 084a7738bd4815349b7c16aec9743358,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3519695574242529015, guid: 084a7738bd4815349b7c16aec9743358,
         type: 3}
@@ -5592,6 +5652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostEnemy_White
       objectReference: {fileID: 0}
+    - target: {fileID: 7040819316956457843, guid: 8af5ae86c8b83bc459578f69a3f79388,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af5ae86c8b83bc459578f69a3f79388, type: 3}
 --- !u!4 &1045588227 stripped
@@ -5749,6 +5814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeEnemy_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939626936724011784, guid: 05a046e8e17c75c4fbce5eae61aaeece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6939626936724011785, guid: 05a046e8e17c75c4fbce5eae61aaeece,
         type: 3}
@@ -6305,7 +6375,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6458,6 +6528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Red (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840834987243429077, guid: 01e76e2aedb21164a986b526be891dc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e76e2aedb21164a986b526be891dc1, type: 3}
@@ -6703,6 +6778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558520893623556450, guid: 0fbce281881ab954f86651c22448a1da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4558520893623556451, guid: 0fbce281881ab954f86651c22448a1da,
         type: 3}
@@ -6973,6 +7053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Green (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558520893623556450, guid: 0fbce281881ab954f86651c22448a1da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4558520893623556451, guid: 0fbce281881ab954f86651c22448a1da,
         type: 3}
@@ -7683,6 +7768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RabbitEnemy_Yellow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2620943248151566640, guid: a6fbe4916c274ec4591699c0ac8c0306,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2620943248151566641, guid: a6fbe4916c274ec4591699c0ac8c0306,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7757,6 +7847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349102588699146488, guid: 6dffd37acc43d2c4faae617b865fee16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3349102588699146489, guid: 6dffd37acc43d2c4faae617b865fee16,
         type: 3}
@@ -8266,6 +8361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy_Green
       objectReference: {fileID: 0}
+    - target: {fileID: 1932942942954180701, guid: 89ba6c8f9df27d2469f40ce0927404a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ba6c8f9df27d2469f40ce0927404a0, type: 3}
 --- !u!4 &1532045790 stripped
@@ -8361,7 +8461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552070833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.021154, y: -1.4889965, z: 18.446722}
+  m_LocalPosition: {x: -22.05, y: -1.4889965, z: 18.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526665070171322565}
@@ -8819,7 +8919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699280127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.23, y: 1.716, z: -35.18}
+  m_LocalPosition: {x: -16.23, y: 1.7, z: -35.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491295435}
@@ -8951,6 +9051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeEnemy_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744314431802172180, guid: 3c6771b8eacb3ab4992057bafdda6b39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1744314431802172181, guid: 3c6771b8eacb3ab4992057bafdda6b39,
         type: 3}
@@ -9101,6 +9206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379758600184704330, guid: e5664b1b8ff8dea41a7952a67d906772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5379758600184704331, guid: e5664b1b8ff8dea41a7952a67d906772,
         type: 3}
@@ -9296,6 +9406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RabbitEnemy_Yellow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620943248151566640, guid: a6fbe4916c274ec4591699c0ac8c0306,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2620943248151566641, guid: a6fbe4916c274ec4591699c0ac8c0306,
         type: 3}
@@ -10961,6 +11076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 4102947274932298403, guid: 711ae8d499d33ad4dadbbdfb25567789,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711ae8d499d33ad4dadbbdfb25567789, type: 3}
 --- !u!4 &2116723857 stripped
@@ -11067,6 +11187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349102588699146488, guid: 6dffd37acc43d2c4faae617b865fee16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3349102588699146489, guid: 6dffd37acc43d2c4faae617b865fee16,
         type: 3}
@@ -11364,6 +11489,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 5252394320699385999, guid: 8b2106b5aab5f2045889f66745becea9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2106b5aab5f2045889f66745becea9, type: 3}
 --- !u!4 &2375815110219491306 stripped
@@ -11383,6 +11513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379758600184704330, guid: e5664b1b8ff8dea41a7952a67d906772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5379758600184704331, guid: e5664b1b8ff8dea41a7952a67d906772,
         type: 3}
@@ -11668,6 +11803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy_Green
       objectReference: {fileID: 0}
+    - target: {fileID: 1932942942954180701, guid: 89ba6c8f9df27d2469f40ce0927404a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ba6c8f9df27d2469f40ce0927404a0, type: 3}
 --- !u!4 &2486709593165626153 stripped
@@ -11687,6 +11827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_Violet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154792064114387536, guid: d90d1bc9ee829744da3c980cda325d5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2154792064114387537, guid: d90d1bc9ee829744da3c980cda325d5e,
         type: 3}
@@ -11836,6 +11981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeEnemy_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939626936724011784, guid: 05a046e8e17c75c4fbce5eae61aaeece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6939626936724011785, guid: 05a046e8e17c75c4fbce5eae61aaeece,
         type: 3}
@@ -12046,6 +12196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BatEnemy_Violet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263726066048761867, guid: 1f0d52e8b13a41b43b516438e190edd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3263726066048761870, guid: 1f0d52e8b13a41b43b516438e190edd8,
         type: 3}
@@ -12276,6 +12431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 5151062005190111183, guid: 5d9a1e7d6f7d1fe43be16dd421f52434,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a1e7d6f7d1fe43be16dd421f52434, type: 3}
 --- !u!4 &4885875983290078300 stripped
@@ -12368,6 +12528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeEnemy_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102947274932298403, guid: 711ae8d499d33ad4dadbbdfb25567789,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4102947274932298406, guid: 711ae8d499d33ad4dadbbdfb25567789,
         type: 3}
@@ -12549,6 +12714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 1744314431802172180, guid: 3c6771b8eacb3ab4992057bafdda6b39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1744314431802172181, guid: 3c6771b8eacb3ab4992057bafdda6b39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12678,6 +12848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GhostEnemy_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040819316956457843, guid: 8af5ae86c8b83bc459578f69a3f79388,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7040819316956457846, guid: 8af5ae86c8b83bc459578f69a3f79388,
         type: 3}
@@ -12827,6 +13002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeEnemy_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323798485462757003, guid: ee8f6d9241277c1439038a6d236b7076,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4323798485462757006, guid: ee8f6d9241277c1439038a6d236b7076,
         type: 3}

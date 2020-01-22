@@ -25,7 +25,6 @@ public class PlayerController : NetworkBehaviour {
         {
             if (character != null) 
             {
-                // при нажатии на правую кнопку мыши пересещаемся в указанную точку
                 if (Input.GetMouseButton(1)) 
                 {
                     Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -36,6 +35,19 @@ public class PlayerController : NetworkBehaviour {
                         CmdSetMovePoint(hit.point);
                     }
                 }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, 100f, ~(1 << LayerMask.NameToLayer("Player"))))
+                    {
+                        Interactable interactable = hit.collider.GetComponent<Interactable>();
+                        if (interactable != null)
+                        {
+                            CmdSetFocus(interactable.GetComponent<NetworkIdentity>());
+                        }
+                    }
+                }
             }
         }
     }
@@ -44,6 +56,12 @@ public class PlayerController : NetworkBehaviour {
     public void CmdSetMovePoint(Vector3 point) 
     {
         character.SetMovePoint(point);
+    }
+
+    [Command]
+    public void CmdSetFocus(NetworkIdentity newFocus)
+    {
+        character.SetNewFocus(newFocus.GetComponent<Interactable>());
     }
 
     private void OnDestroy() 

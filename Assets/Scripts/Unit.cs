@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
-public class Unit : NetworkBehaviour
+public class Unit : Interactable
 {
+    [SyncEvent] public event Action EventOnDamage;
+    [SyncEvent] public event Action EventOnDie;
+    [SyncEvent] public event Action EventOnRevive;
+
     [SerializeField] protected UnitMotor _motor;
     [SerializeField] protected UnitStats _myStats;
     protected bool _isDead;
+    protected Interactable _focus;
 
     void Update()
     {
@@ -21,8 +27,14 @@ public class Unit : NetworkBehaviour
         {
             if (!_isDead)
             {
-                if (_myStats.CurHealth == 0) Die();
-                else OnAliveUpdate();
+                if (_myStats.CurHealth == 0)
+                {
+                    Die();
+                }
+                else
+                {
+                    OnAliveUpdate();
+                }
             }
             else
             {
@@ -40,22 +52,55 @@ public class Unit : NetworkBehaviour
         if (!isServer) Revive();
     }
 
+    [ClientCallback]
     protected virtual void Die()
     {
         _isDead = true;
         if (isServer)
         {
+            HasInteract = false;
+            RemoveFocus();
             _motor.MoveToPoint(transform.position);
+            EventOnDie();
             RpcDie();
         }
     }
+    [ClientCallback]
     protected virtual void Revive()
     {
         _isDead = false;
         if (isServer)
         {
+            HasInteract = true;
             _myStats.SetHealthRate(1);
+            EventOnRevive();
             RpcRevive();
         }
+    }
+    protected virtual void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != _focus)
+        {
+            _focus = newFocus;
+            _motor.FollowTarget(newFocus);
+        }
+    }
+    protected virtual void RemoveFocus()
+    {
+        _focus = null;
+        _motor.StopFollowingTarget();
+    }
+    public override bool Interact(GameObject user)
+    {
+        Combat combat = user.GetComponent<Combat>();
+        if (combat != null)
+        {
+            if (combat.Attack(_myStats))
+            {
+                EventOnDamage();
+                return true;
+            }
+        }
+        return base.Interact(user);
     }
 }

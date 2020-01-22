@@ -859,6 +859,9 @@ GameObject:
   - component: {fileID: 3519695574242528975}
   - component: {fileID: 3519695574242528974}
   - component: {fileID: 1595336143097609849}
+  - component: {fileID: 6513737216123946704}
+  - component: {fileID: 7601040200495413558}
+  - component: {fileID: 8007048834367643648}
   m_Layer: 0
   m_Name: RabbitEnemy_Cyan
   m_TagString: Untagged
@@ -1041,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   damage:
-    _baseValue: 2
+    _baseValue: 5
 --- !u!114 &3519695574242528974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,12 +1057,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4874e6f6ae81a584aa09d370fd9bb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionTransform: {fileID: 3519695574242529015}
+  Radius: 2
   _motor: {fileID: 3519695574242528972}
   _myStats: {fileID: 3519695574242528975}
   _moveRadius: 10
   _minMoveDelay: 4
   _maxMoveDelay: 12
-  _aggressive: 0
+  _aggressive: 1
   _viewDistance: 5
   _reviveDelay: 5
 --- !u!114 &1595336143097609849
@@ -1076,6 +1081,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _disableBehaviours:
   - {fileID: 5651839987782392503}
+--- !u!65 &6513737216123946704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519695574242529014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.48, z: 1}
+  m_Center: {x: 0, y: 1.24, z: 0}
+--- !u!114 &7601040200495413558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519695574242529014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2744683b7c4e1458e5d915c60ad99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackSpeed: 1
+--- !u!114 &8007048834367643648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519695574242529014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664de5d42a82b74458eb14cea91ad481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2243055006114084966}
+  _unit: {fileID: 3519695574242528974}
+  _combat: {fileID: 7601040200495413558}
 --- !u!1 &3519695576257383316
 GameObject:
   m_ObjectHideFlags: 0

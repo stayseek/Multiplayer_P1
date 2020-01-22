@@ -11,7 +11,7 @@ public class PlayerLoader : NetworkBehaviour
     {
         if (isServer)
         {
-            GameObject unit = Instantiate(_unitPrefab);
+            GameObject unit = Instantiate(_unitPrefab, transform.position, Quaternion.identity, transform);
             NetworkServer.Spawn(unit);
             _unitIdentity = unit.GetComponent<NetworkIdentity>();
             _controller.SetCharacter(unit.GetComponent<Character>(), true);
@@ -24,7 +24,7 @@ public class PlayerLoader : NetworkBehaviour
     [Command]
     public void CmdCreatePlayer()
     {
-        GameObject unit = Instantiate(_unitPrefab);
+        GameObject unit = Instantiate(_unitPrefab, transform.position, Quaternion.identity, transform);
         NetworkServer.Spawn(unit);
         _unitIdentity = unit.GetComponent<NetworkIdentity>();
         _controller.SetCharacter(unit.GetComponent<Character>(), false);
