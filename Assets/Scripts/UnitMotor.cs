@@ -10,7 +10,7 @@ public class UnitMotor : MonoBehaviour
 
     void Start () 
     {
-        _agent = GetComponent<NavMeshAgent>();
+        _agent = gameObject.GetComponent<NavMeshAgent>();
 	}
 	public void MoveToPoint(Vector3 point) 
     {

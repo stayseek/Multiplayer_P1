@@ -2252,7 +2252,7 @@ MonoBehaviour:
   Radius: 2
   _motor: {fileID: 114051063119811626}
   _myStats: {fileID: 114100114540559552}
-  _reviveDelay: 5
+  _reviveDelay: 1
   gfx: {fileID: 8948975879563968785}
 --- !u!1 &8948975879563968785
 GameObject:

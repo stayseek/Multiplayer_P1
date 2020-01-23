@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotor), typeof(PlayerStats))]
 public class Character : Unit
 {
+    public Inventory Inventory;
+
     private Vector3 _startPosition;
     [SerializeField] private float _reviveDelay = 5f;
     private float _reviveTime;
@@ -35,7 +37,10 @@ public class Character : Unit
                 float distance = Vector3.Distance(_focus.InteractionTransform.position, transform.position);
                 if (distance <= _focus.Radius)
                 {
-                    _focus.Interact(gameObject);
+                    if (!_focus.Interact(gameObject))
+                    {
+                        RemoveFocus();
+                    }
                 }
             }
         }
@@ -65,7 +70,7 @@ public class Character : Unit
         gfx.SetActive(true);
         if (isServer)
         {
-            _motor.MoveToPoint(_startPosition);
+            SetMovePoint(_startPosition);
         }
     }
 
@@ -82,5 +87,10 @@ public class Character : Unit
         {
             if (newFocus.HasInteract) SetFocus(newFocus);
         }
+    }
+    public void SetInventory (Inventory inventory)
+    {
+        Inventory = inventory;
+        Inventory.DropPoint = transform;
     }
 }
