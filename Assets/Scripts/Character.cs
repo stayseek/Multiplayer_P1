@@ -85,7 +85,10 @@ public class Character : Unit
     {
         if (!_isDead)
         {
-            if (newFocus.HasInteract) SetFocus(newFocus);
+            if (newFocus.HasInteract)
+            {
+                SetFocus(newFocus);
+            }
         }
     }
     public void SetInventory (Inventory inventory)

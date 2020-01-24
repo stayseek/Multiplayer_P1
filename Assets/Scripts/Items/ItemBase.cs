@@ -15,8 +15,8 @@ public class ItemBase : MonoBehaviour
                 Debug.LogError("More then one Item Collection found!");
                 return;
             }
-            Collection = collectionLink;
         }
+        Collection = collectionLink;
     }
     #endregion
     [SerializeField] ItemCollection collectionLink;

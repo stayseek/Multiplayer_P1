@@ -27,9 +27,9 @@ public class PlayerController : NetworkBehaviour {
     {
         if (isLocalPlayer) 
         {
-            if (_character != null) 
+            if (_character != null && !EventSystem.current.IsPointerOverGameObject()) 
             {
-                if (Input.GetMouseButton(1)) 
+                if (Input.GetMouseButtonDown(1)) 
                 {
                     Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
@@ -48,7 +48,6 @@ public class PlayerController : NetworkBehaviour {
                         Interactable interactable = hit.collider.GetComponent<Interactable>();
                         if (interactable != null)
                         {
-                            //CmdSetMovePoint(hit.point);
                             CmdSetFocus(interactable.GetComponent<NetworkIdentity>());
                         }
                     }

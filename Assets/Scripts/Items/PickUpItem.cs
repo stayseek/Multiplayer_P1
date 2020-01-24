@@ -16,7 +16,6 @@ public class PickUpItem : Interactable
             Destroy(gameObject);
             return true;
         }
-
         return false;
     }
 }

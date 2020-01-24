@@ -22,6 +22,7 @@ public class PlayerLoader : NetworkBehaviour
         {
             Character character = CreateCharacter();
             _controller.SetCharacter(character, true);
+            InventoryUI.Instance.SetInventory(character.Inventory);
         }
         else
         {
@@ -44,6 +45,7 @@ public class PlayerLoader : NetworkBehaviour
             Character character = unit.GetComponent<Character>();
             _controller.SetCharacter(unit.GetComponent<Character>(), true);
             character.SetInventory(GetComponent<Inventory>());
+            InventoryUI.Instance.SetInventory(character.Inventory);
         }
     }
     public override bool OnCheckObserver(NetworkConnection connection)
