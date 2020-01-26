@@ -9,7 +9,14 @@ public class UnitAnimation : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        _animator.SetBool(Moving, _agent.hasPath);
+        if (_agent.velocity.magnitude == 0)
+        {
+            _animator.SetBool(Moving, false);
+        }
+        else
+        {
+            _animator.SetBool(Moving, true);
+        }
     }
 
     //Placeholder functions for Animation events

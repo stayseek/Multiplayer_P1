@@ -98,8 +98,8 @@ public class Unit : Interactable
             if (combat.Attack(_myStats))
             {
                 EventOnDamage();
-                return true;
             }
+            return true;
         }
         return base.Interact(user);
     }

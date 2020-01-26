@@ -1,43 +1,47 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.EventSystems;
 
 public class PlayerController : NetworkBehaviour {
 
-    [SerializeField] LayerMask movementMask;
+    [SerializeField] private LayerMask _movementMask;
 
-    Character character;
-    Camera cam;
+    private Character _character;
+    private Camera _cam;
 
     private void Awake() 
     {
-        cam = Camera.main;
+        _cam = Camera.main;
     }
 
     public void SetCharacter(Character character, bool isLocalPlayer) 
     {
-        this.character = character;
-        if (isLocalPlayer) cam.GetComponent<CameraController>().target = character.transform;
+        _character = character;
+        if (isLocalPlayer)
+        {
+            _cam.GetComponent<CameraController>().target = character.transform;
+        }
     }
 
     private void Update() 
     {
         if (isLocalPlayer) 
         {
-            if (character != null) 
+            if (_character != null && !EventSystem.current.IsPointerOverGameObject()) 
             {
-                if (Input.GetMouseButton(1)) 
+                if (Input.GetMouseButtonDown(1)) 
                 {
-                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 
-                    if (Physics.Raycast(ray, out hit, 100f, movementMask)) 
+                    if (Physics.Raycast(ray, out hit, 100f, _movementMask)) 
                     {
                         CmdSetMovePoint(hit.point);
                     }
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 100f, ~(1 << LayerMask.NameToLayer("Player"))))
                     {
@@ -55,17 +59,17 @@ public class PlayerController : NetworkBehaviour {
     [Command]
     public void CmdSetMovePoint(Vector3 point) 
     {
-        character.SetMovePoint(point);
+        _character.SetMovePoint(point);
     }
 
     [Command]
     public void CmdSetFocus(NetworkIdentity newFocus)
     {
-        character.SetNewFocus(newFocus.GetComponent<Interactable>());
+        _character.SetNewFocus(newFocus.GetComponent<Interactable>());
     }
 
     private void OnDestroy() 
     {
-        if (character != null) Destroy(character.gameObject);
+        if (_character != null) Destroy(_character.gameObject);
     }
 }
