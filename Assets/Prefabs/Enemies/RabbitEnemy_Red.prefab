@@ -862,6 +862,7 @@ GameObject:
   - component: {fileID: 7912982862536180211}
   - component: {fileID: 5964214233742557639}
   - component: {fileID: 5663755677934804331}
+  - component: {fileID: 114955665065407454}
   m_Layer: 0
   m_Name: RabbitEnemy_Red
   m_TagString: Untagged
@@ -1044,7 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   damage:
-    _baseValue: 5
+    _baseValue: 2
 --- !u!114 &2840834987243429101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,6 +1123,23 @@ MonoBehaviour:
   _animator: {fileID: 525494273584865364}
   _unit: {fileID: 2840834987243429101}
   _combat: {fileID: 5964214233742557639}
+--- !u!114 &114955665065407454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840834987243429077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6fe15b81ab8204189f250bf0451b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropItems:
+  - Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
+    Rate: 50
+  - Item: {fileID: 11400000, guid: 6bbb512a8fc098c4aad8f23fb2e14227, type: 2}
+    Rate: 10
 --- !u!1 &2840834988453992887
 GameObject:
   m_ObjectHideFlags: 0

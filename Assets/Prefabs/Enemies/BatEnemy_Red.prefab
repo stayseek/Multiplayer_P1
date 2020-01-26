@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 1314131665918591344}
   - component: {fileID: 5337744887337616786}
   - component: {fileID: 3117395883475757772}
+  - component: {fileID: 114142320654917544}
   m_Layer: 0
   m_Name: BatEnemy_Red
   m_TagString: Untagged
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   damage:
-    _baseValue: 5
+    _baseValue: 2
 --- !u!114 &5252394320699386039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +314,21 @@ MonoBehaviour:
   _animator: {fileID: 8504749796222638051}
   _unit: {fileID: 5252394320699386039}
   _combat: {fileID: 5337744887337616786}
+--- !u!114 &114142320654917544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5252394320699385999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6fe15b81ab8204189f250bf0451b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropItems:
+  - Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
+    Rate: 50
 --- !u!1 &8598778376742143279
 GameObject:
   m_ObjectHideFlags: 0

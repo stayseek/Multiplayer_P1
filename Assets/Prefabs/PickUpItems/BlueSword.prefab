@@ -118,6 +118,7 @@ MonoBehaviour:
   InteractionTransform: {fileID: 4335652043914612913}
   Radius: 2
   Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
+  Lifetime: 5
 --- !u!1 &8811631408699816995
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class PlayerController : NetworkBehaviour {
         {
             if (_character != null && !EventSystem.current.IsPointerOverGameObject()) 
             {
-                if (Input.GetMouseButtonDown(1)) 
+                if (Input.GetMouseButton(1)) 
                 {
                     Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;

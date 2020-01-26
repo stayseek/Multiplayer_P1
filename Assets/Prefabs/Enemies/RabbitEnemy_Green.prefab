@@ -893,6 +893,7 @@ GameObject:
   - component: {fileID: 7407136274758288438}
   - component: {fileID: 3374684977961513703}
   - component: {fileID: 3012874476245490073}
+  - component: {fileID: 114586049729478204}
   m_Layer: 0
   m_Name: RabbitEnemy_Green
   m_TagString: Untagged
@@ -1075,7 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   damage:
-    _baseValue: 5
+    _baseValue: 2
 --- !u!114 &4558520893623556442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,3 +1154,20 @@ MonoBehaviour:
   _animator: {fileID: 2834707137244119204}
   _unit: {fileID: 4558520893623556442}
   _combat: {fileID: 3374684977961513703}
+--- !u!114 &114586049729478204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558520893623556450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6fe15b81ab8204189f250bf0451b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropItems:
+  - Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
+    Rate: 50
+  - Item: {fileID: 11400000, guid: 6bbb512a8fc098c4aad8f23fb2e14227, type: 2}
+    Rate: 10
