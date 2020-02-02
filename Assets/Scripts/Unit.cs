@@ -11,9 +11,17 @@ public class Unit : Interactable
     [SyncEvent] public event Action EventOnRevive;
 
     [SerializeField] protected UnitMotor _motor;
-    [SerializeField] protected UnitStats _myStats;
+    [SerializeField] protected UnitStats _stats;
     protected bool _isDead;
     protected Interactable _focus;
+
+    public UnitStats Stats
+    {
+        get
+        {
+            return _stats;
+        }
+    }
 
     void Update()
     {
@@ -27,7 +35,7 @@ public class Unit : Interactable
         {
             if (!_isDead)
             {
-                if (_myStats.CurHealth == 0)
+                if (_stats.CurHealth == 0)
                 {
                     Die();
                 }
@@ -74,7 +82,7 @@ public class Unit : Interactable
         if (isServer)
         {
             HasInteract = true;
-            _myStats.SetHealthRate(1);
+            _stats.SetHealthRate(1);
             EventOnRevive();
             RpcRevive();
         }
@@ -97,12 +105,17 @@ public class Unit : Interactable
         Combat combat = user.GetComponent<Combat>();
         if (combat != null)
         {
-            if (combat.Attack(_myStats))
+            if (combat.Attack(_stats))
             {
                 EventOnDamage();
             }
             return true;
         }
         return base.Interact(user);
+    }
+    public override void OnStartServer()
+    {
+        _motor.SetMoveSpeed(_stats.MoveSpeed.GetValue());
+        _stats.MoveSpeed.OnStatChanged += _motor.SetMoveSpeed;
     }
 }

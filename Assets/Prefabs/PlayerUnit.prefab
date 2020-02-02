@@ -2054,7 +2054,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 50
-  damage:
+  Damage:
+    _baseValue: 10
+  Armour:
+    _baseValue: 0
+  MoveSpeed:
     _baseValue: 5
 --- !u!143 &1448263999954723916
 CharacterController:
@@ -2252,6 +2256,7 @@ MonoBehaviour:
   Radius: 2
   _motor: {fileID: 114051063119811626}
   _myStats: {fileID: 114100114540559552}
+  Player: {fileID: 0}
   _reviveDelay: 1
   gfx: {fileID: 8948975879563968785}
 --- !u!1 &8948975879563968785

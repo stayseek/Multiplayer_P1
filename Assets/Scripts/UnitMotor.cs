@@ -8,9 +8,13 @@ public class UnitMotor : MonoBehaviour
     private NavMeshAgent _agent;
     private Transform _target;
 
-    void Start () 
+    private void Awake()
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
+    }
+    void Start () 
+    {
+        
 	}
 	public void MoveToPoint(Vector3 point) 
     {
@@ -43,5 +47,9 @@ public class UnitMotor : MonoBehaviour
         Vector3 direction = _target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+    public void SetMoveSpeed (int speed)
+    {
+        _agent.speed = speed;
     }
 }

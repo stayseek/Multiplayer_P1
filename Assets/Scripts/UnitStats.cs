@@ -5,8 +5,9 @@ public class UnitStats : NetworkBehaviour
 {
     [SerializeField] protected int _maxHealth;
     [SyncVar] protected int _curHealth;
-    public Stat damage;
-
+    public Stat Damage;
+    public Stat Armour;
+    public Stat MoveSpeed;
     public override void OnStartServer()
     {
         _curHealth = _maxHealth;
@@ -25,10 +26,14 @@ public class UnitStats : NetworkBehaviour
     }
     public virtual void TakeDamage(int damage)
     {
-        _curHealth -= damage;
-        if (_curHealth <= 0)
+        damage -= Armour.GetValue();
+        if (damage > 0)
         {
-            _curHealth = 0;
-        }
+            _curHealth -= damage;
+            if (_curHealth <= 0)
+            {
+                _curHealth = 0;
+            }
+        } 
     }
 }
