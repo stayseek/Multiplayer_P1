@@ -56,6 +56,7 @@ public class Unit : Interactable
     protected virtual void Die()
     {
         _isDead = true;
+        GetComponent<Collider>().enabled = false;
         if (isServer)
         {
             HasInteract = false;
@@ -69,6 +70,7 @@ public class Unit : Interactable
     protected virtual void Revive()
     {
         _isDead = false;
+        GetComponent<Collider>().enabled = false;
         if (isServer)
         {
             HasInteract = true;

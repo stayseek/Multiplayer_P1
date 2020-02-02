@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7810389576843347277}
   - component: {fileID: 610857048668028007}
   - component: {fileID: 3426000538148719052}
+  - component: {fileID: 114466079495095992}
   m_Layer: 0
   m_Name: BatEnemy_Green
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
+  m_TransformSyncMode: 4
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   damage:
-    _baseValue: 5
+    _baseValue: 2
 --- !u!114 &1932942942954180709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +283,21 @@ MonoBehaviour:
   _animator: {fileID: 9060441299569912051}
   _unit: {fileID: 1932942942954180709}
   _combat: {fileID: 610857048668028007}
+--- !u!114 &114466079495095992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932942942954180701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6fe15b81ab8204189f250bf0451b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropItems:
+  - Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
+    Rate: 50
 --- !u!1 &1932942944693228863
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +848,7 @@ Animator:
   m_GameObject: {fileID: 9002459089655455791}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2bceb9aefa459d1479482d939c70101e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0ff87736a1d78f148bb347e02555d7d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

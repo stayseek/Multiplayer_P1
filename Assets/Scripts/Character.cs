@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotor), typeof(PlayerStats))]
 public class Character : Unit
 {
-    public Inventory Inventory;
+    public Player Player;
 
     private Vector3 _startPosition;
     [SerializeField] private float _reviveDelay = 5f;
@@ -90,10 +90,5 @@ public class Character : Unit
                 SetFocus(newFocus);
             }
         }
-    }
-    public void SetInventory (Inventory inventory)
-    {
-        Inventory = inventory;
-        Inventory.DropPoint = transform;
     }
 }

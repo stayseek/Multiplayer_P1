@@ -3,8 +3,7 @@ using UnityEngine.Networking;
 
 public class Inventory : NetworkBehaviour
 {
-
-    public Transform DropPoint;
+    public Player Player;
     public int Space = 20;
     public event SyncList<Item>.SyncListChanged OnItemChanged;
 
@@ -20,7 +19,7 @@ public class Inventory : NetworkBehaviour
         OnItemChanged(op, itemIndex);
     }
 
-    public bool Add(Item item)
+    public bool AddItem(Item item)
     {
         if (Items.Count < Space)
         {
@@ -30,13 +29,13 @@ public class Inventory : NetworkBehaviour
         else return false;
     }
 
-    public void Remove(Item item)
+    public void DropItem(Item item)
     {
-        CmdRemoveItem(Items.IndexOf(item));
+        CmdDropItem(Items.IndexOf(item));
     }
 
     [Command]
-    void CmdRemoveItem(int index)
+    void CmdDropItem(int index)
     {
         if (Items[index] != null)
         {
@@ -47,8 +46,27 @@ public class Inventory : NetworkBehaviour
 
     private void Drop(Item item)
     {
-        PickUpItem pickupItem = Instantiate(item.pickUpPrefab, DropPoint.position, Quaternion.Euler(0, Random.Range(0, 360f), 0));
+        PickUpItem pickupItem = Instantiate(item.pickUpPrefab, Player.Character.transform.position, Quaternion.Euler(0, Random.Range(0, 360f), 0));
         pickupItem.Item = item;
         NetworkServer.Spawn(pickupItem.gameObject);
+    }
+
+    public void UseItem(Item item)
+    {
+        CmdUseItem(Items.IndexOf(item));
+    }
+
+    [Command]
+    void CmdUseItem(int index)
+    {
+        if (Items[index] != null)
+        {
+            Items[index].Use(Player);
+        }
+    }
+
+    public void RemoveItem(Item item)
+    {
+        Items.Remove(item);
     }
 }
