@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Text value;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeStat(int stat)
     {
-        
+        value.text = stat.ToString();
     }
 }

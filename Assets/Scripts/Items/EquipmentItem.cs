@@ -6,7 +6,7 @@ public class EquipmentItem : Item
     public EquipmentSlotType equipSlot;
 
     public int damageModifier;
-    public int armourModifier;
+    public int armorModifier;
     public int speedModifier;
 
     public override void Use(Player player)
@@ -22,7 +22,7 @@ public class EquipmentItem : Item
         {
             UnitStats stats = player.Character.Stats;
             stats.Damage.AddModifier(damageModifier);
-            stats.Armour.AddModifier(armourModifier);
+            stats.Armor.AddModifier(armorModifier);
             stats.MoveSpeed.AddModifier(speedModifier);
         }
     }
@@ -33,7 +33,7 @@ public class EquipmentItem : Item
         {
             UnitStats stats = player.Character.Stats;
             stats.Damage.RemoveModifier(damageModifier);
-            stats.Armour.RemoveModifier(armourModifier);
+            stats.Armor.RemoveModifier(armorModifier);
             stats.MoveSpeed.RemoveModifier(speedModifier);
         }
     }

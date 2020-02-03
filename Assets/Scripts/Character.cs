@@ -13,6 +13,14 @@ public class Character : Unit
 
     [SerializeField] private GameObject gfx;
 
+    new public PlayerStats Stats 
+    { 
+        get 
+        { 
+            return _stats as PlayerStats; 
+        } 
+    }
+
     void Start()
     {
         _startPosition = transform.position;

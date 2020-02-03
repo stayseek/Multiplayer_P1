@@ -206,7 +206,7 @@ MonoBehaviour:
   _maxHealth: 10
   Damage:
     _baseValue: 5
-  Armour:
+  Armor:
     _baseValue: 0
   MoveSpeed:
     _baseValue: 4
@@ -225,7 +225,7 @@ MonoBehaviour:
   InteractionTransform: {fileID: 5151062005190111182}
   Radius: 2
   _motor: {fileID: 5151062005190111221}
-  _myStats: {fileID: 5151062005190111222}
+  _stats: {fileID: 5151062005190111222}
   _moveRadius: 10
   _minMoveDelay: 4
   _maxMoveDelay: 12
