@@ -334,7 +334,7 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: 75360a548598bde4ab96e92bcbf5b5ea, type: 2}
     Rate: 50
   - Item: {fileID: 11400000, guid: 6bbb512a8fc098c4aad8f23fb2e14227, type: 2}
-    Rate: 10
+    Rate: 50
 --- !u!1 &4139880412365284983
 GameObject:
   m_ObjectHideFlags: 0
