@@ -234,8 +234,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 10
-  damage:
-    _baseValue: 2
+  Damage:
+    _baseValue: 5
+  Armor:
+    _baseValue: 0
+  MoveSpeed:
+    _baseValue: 3
 --- !u!114 &3349102588699146432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +255,7 @@ MonoBehaviour:
   InteractionTransform: {fileID: 3349102588699146489}
   Radius: 2
   _motor: {fileID: 3349102588699146434}
-  _myStats: {fileID: 3349102588699146433}
+  _stats: {fileID: 3349102588699146433}
   _moveRadius: 10
   _minMoveDelay: 4
   _maxMoveDelay: 12
