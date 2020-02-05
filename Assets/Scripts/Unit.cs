@@ -107,7 +107,7 @@ public class Unit : Interactable
         {
             if (combat.Attack(_stats))
             {
-                EventOnDamage();
+                DamageWithCombat(user);
             }
             return true;
         }
@@ -117,5 +117,9 @@ public class Unit : Interactable
     {
         _motor.SetMoveSpeed(_stats.MoveSpeed.GetValue());
         _stats.MoveSpeed.OnStatChanged += _motor.SetMoveSpeed;
+    }
+    protected virtual void DamageWithCombat(GameObject user)
+    {
+        EventOnDamage();
     }
 }

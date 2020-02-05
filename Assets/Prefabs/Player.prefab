@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114087898195963434}
   - component: {fileID: 114696419686095426}
   - component: {fileID: 114519574189691728}
+  - component: {fileID: 114716416402472184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   _character: {fileID: 0}
   _inventory: {fileID: 0}
   _equipment: {fileID: 0}
+  _statsManager: {fileID: 0}
 --- !u!114 &114519574189691728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,5 +158,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 0
-  Armour: 0
+  Armor: 0
   MoveSpeed: 0
+--- !u!114 &114716416402472184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533052244593973801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42682adc0be272438ceb29881c7c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

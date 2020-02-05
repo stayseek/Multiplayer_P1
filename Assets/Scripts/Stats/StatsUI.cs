@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatsUI : MonoBehaviour
 {
@@ -21,11 +22,17 @@ public class StatsUI : MonoBehaviour
     [SerializeField] private StatItem _damageStat;
     [SerializeField] private StatItem _armorStat;
     [SerializeField] private StatItem _moveSpeedStat;
+    [SerializeField] private Text _levelText;
+    [SerializeField] private Text _statPointsText;
 
     private StatsManager _manager;
     private int _curDamage;
     private int _curArmor;
     private int _curMoveSpeed;
+    private int _curLevel;
+    private int _curStatPoints;
+    private float _curExp;
+    private float _nextLevelExp;
 
     void Start()
     {
@@ -64,6 +71,53 @@ public class StatsUI : MonoBehaviour
         {
             _curMoveSpeed = _manager.MoveSpeed;
             _moveSpeedStat.ChangeStat(_curMoveSpeed);
+        }
+        if (_curLevel != _manager.Level)
+        {
+            _curLevel = _manager.Level;
+            _levelText.text = _curLevel.ToString();
+        }
+        if (_curExp != _manager.Exp)
+        {
+            _curExp = _manager.Exp;
+        }
+        if (_nextLevelExp != _manager.NextLevelExp)
+        {
+            _nextLevelExp = _manager.NextLevelExp;
+        }
+        if (_curStatPoints != _manager.StatPoints)
+        {
+            _curStatPoints = _manager.StatPoints;
+            _statPointsText.text = _curStatPoints.ToString();
+            if (_curStatPoints > 0)
+            {
+                SetUpgradableStats(true);
+            }
+            else
+            {
+                SetUpgradableStats(false);
+            }
+        }
+    }
+    private void SetUpgradableStats(bool active)
+    {
+        _damageStat.SetUpgradable(active);
+        _armorStat.SetUpgradable(active);
+        _moveSpeedStat.SetUpgradable(active);
+    }
+    public void UpgradeStat(StatItem stat)
+    {
+        if (stat == _damageStat)
+        {
+            _manager.CmdUpgradeStat((int)StatType.Damage);
+        }
+        else if (stat == _armorStat)
+        {
+            _manager.CmdUpgradeStat((int)StatType.Armor);
+        }
+        else if (stat == _moveSpeedStat)
+        {
+            _manager.CmdUpgradeStat((int)StatType.MoveSpeed);
         }
     }
 }
