@@ -8,7 +8,19 @@ public class Stat
 
     private List<int> _modifiers = new List<int>();
 
-    [SerializeField] private int _baseValue;
+    [SerializeField] int _baseValue;
+    public int BaseValue
+    {
+        get 
+        { 
+            return _baseValue; 
+        }
+        set
+        {
+            _baseValue = value;
+            OnStatChanged?.Invoke(GetValue());
+        }
+    }
     public int GetValue()
     {
         int finalValue = _baseValue;

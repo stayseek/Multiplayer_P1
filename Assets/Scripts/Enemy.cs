@@ -15,9 +15,12 @@ public class Enemy : Unit
 
     [Header("Behavior")]
     [SerializeField] private bool _aggressive;
+    [SerializeField] private float _rewardExp;
     [SerializeField] private float _viewDistance = 5f;
     [SerializeField] private float _reviveDelay = 5f;
+
     private float _reviveTime;
+    private List<Character> _enemies = new List<Character>();
 
     void Start()
     {
@@ -82,6 +85,18 @@ public class Enemy : Unit
         new Vector3(_moveRadius, 0, 0) + _startPosition;
         _motor.MoveToPoint(_curDistanation);
     }
+    protected override void Die()
+    {
+        base.Die();
+        if (isServer)
+        {
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                _enemies[i].Player.Progress.AddExp(_rewardExp / _enemies.Count);
+            }
+            _enemies.Clear();
+        }
+    }
     protected override void Revive()
     {
         transform.position = _startPosition;
@@ -112,6 +127,15 @@ public class Enemy : Unit
             return true;
         }
         return false;
+    }
+    protected override void DamageWithCombat(GameObject user)
+    {
+        base.DamageWithCombat(user);
+        Character character = user.GetComponent<Character>();
+        if (character != null && !_enemies.Contains(character))
+        {
+            _enemies.Add(character);
+        }
     }
     protected override void OnDrawGizmosSelected()
     {
